@@ -1,7 +1,14 @@
-<a routerLink="/decks/new" class="btn btn-primary">Create Deck</a>
+<div class="d-flex flex-column gap-3">
+  <a routerLink="/decks/new" class="btn btn-primary" style="width: fit-content"
+    >Create Deck</a
+  >
 
-<ul class="d-flex flex-column gap-3 pl-0 mt-3">
-  <li *ngFor="let deck of decks">
-    <app-decks-list-card [deck]="deck" (deckDeleted)="onDeckDeleted()" />
-  </li>
-</ul>
+  <div *ngIf="!decks?.length" class="p-3 card d-flex items-center">
+    <p>No decks available</p>
+  </div>
+  <ul class="d-flex flex-column gap-3 pl-0 mt-3" *ngIf="decks?.length">
+    <li *ngFor="let deck of decks">
+      <app-decks-list-card [deck]="deck" (deckDeleted)="onDeckDeleted()" />
+    </li>
+  </ul>
+</div>

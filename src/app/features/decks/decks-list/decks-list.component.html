@@ -1,0 +1,7 @@
+<a routerLink="/decks/new" class="btn btn-primary">Create Deck</a>
+
+<ul class="d-flex flex-column gap-3 pl-0 mt-3">
+  <li *ngFor="let deck of decks">
+    <app-decks-list-card [deck]="deck" />
+  </li>
+</ul>

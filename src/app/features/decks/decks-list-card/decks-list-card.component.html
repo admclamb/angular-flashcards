@@ -1,0 +1,21 @@
+<article class="card p-3 d-flex flex-column gap-3">
+  <div class="d-flex items-center">
+    <h4>{{ deck.name }}</h4>
+    <p class="lead ms-auto">{{ deck.cards.length }} Cards</p>
+  </div>
+
+  <p>{{ deck.description }}</p>
+  <ul class="d-flex items-center gap-3">
+    <li>
+      <a [routerLink]="['/decks', deck.id]" class="btn btn-primary">View</a>
+    </li>
+    <li>
+      <a [routerLink]="['/decks', deck.id, '/study']" class="btn btn-secondary"
+        >Study</a
+      >
+    </li>
+    <li class="ms-auto">
+      <button class="btn btn-danger" (click)="onDeleteDeck()">Delete</button>
+    </li>
+  </ul>
+</article>

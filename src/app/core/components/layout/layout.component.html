@@ -1,0 +1,9 @@
+<div class="d-flex flex-column min-vh-100">
+  <header>
+    <app-navbar />
+  </header>
+  <main [class]="mainClass" class="flex-grow-1">
+    <ng-content />
+  </main>
+  <app-footer />
+</div>

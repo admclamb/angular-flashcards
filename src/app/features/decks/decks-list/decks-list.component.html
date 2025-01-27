@@ -2,6 +2,6 @@
 
 <ul class="d-flex flex-column gap-3 pl-0 mt-3">
   <li *ngFor="let deck of decks">
-    <app-decks-list-card [deck]="deck" />
+    <app-decks-list-card [deck]="deck" (deckDeleted)="onDeckDeleted()" />
   </li>
 </ul>

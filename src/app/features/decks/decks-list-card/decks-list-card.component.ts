@@ -16,11 +16,13 @@ export class DecksListCardComponent {
   constructor(private readonly decksService: DecksService) {}
 
   onDeleteDeck(): void {
-    if (window.confirm('Are you sure you want to delete this deck?')) {
-      this.decksService.deleteDeck(this.deck.id).subscribe(() => {
-        console.log(`Deck with id ${this.deck.id} deleted`);
-        this.deckDeleted.emit();
-      });
+    if (this.deck?.id) {
+      if (window.confirm('Are you sure you want to delete this deck?')) {
+        this.decksService.deleteDeck(this.deck.id).subscribe(() => {
+          console.log(`Deck with id ${this.deck.id} deleted`);
+          this.deckDeleted.emit();
+        });
+      }
     }
   }
 }

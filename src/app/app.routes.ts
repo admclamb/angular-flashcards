@@ -18,7 +18,7 @@ export const routes: Routes = [
   {
     path: 'decks/:deckId/edit',
     loadChildren: () =>
-      import('./features/edit-decks/edit-decks.module').then(
+      import('./features/edit-deck/edit-deck.module').then(
         (m) => m.EditDecksModule
       ),
   },

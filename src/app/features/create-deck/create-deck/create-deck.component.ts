@@ -36,7 +36,7 @@ export class CreateDeckComponent {
         })
         .subscribe((data) => {
           if (data) {
-            this.router.navigate(['deck', data.id]);
+            this.router.navigate(['decks', data.id]);
           }
         });
     }

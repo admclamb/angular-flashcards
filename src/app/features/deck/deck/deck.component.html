@@ -1,0 +1,46 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ deck?.name || "Deck" }}
+    </li>
+  </ol>
+</nav>
+<article class="card p-2 mb-3" *ngIf="deck">
+  <div class="card-body">
+    <h4>{{ deck?.name }}</h4>
+    <p class="mb-4 text-body-secondary">{{ deck?.description }}</p>
+
+    <ul class="d-flex align-items-center gap-3 mb-0">
+      <li>
+        <a
+          [routerLink]="['/decks', 'deck?.id', '/study']"
+          class="btn btn-primary"
+          >Study</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/decks', 'deck?.id', '/cards/new']"
+          class="btn btn-secondary"
+          >Add Cards</a
+        >
+      </li>
+      <li class="ms-auto">
+        <a
+          [routerLink]="['/decks', 'deck?.id', '/edit']"
+          class="btn btn-secondary"
+          >Edit</a
+        >
+      </li>
+      <li>
+        <button class="btn btn-danger">Delete</button>
+      </li>
+    </ul>
+  </div>
+</article>
+
+<article class="card p-3">
+  <div class="card-header"><h4>Cards</h4></div>
+  <div class="card-body"></div>
+</article>

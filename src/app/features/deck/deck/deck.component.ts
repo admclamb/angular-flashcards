@@ -3,10 +3,11 @@ import { Deck } from '../../decks/deck';
 import { DecksService } from '../../decks/decks.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { DeckCardListComponent } from '../deck-card-list/deck-card-list.component';
 
 @Component({
   selector: 'app-deck',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, DeckCardListComponent],
   templateUrl: './deck.component.html',
   styleUrl: './deck.component.css',
 })
